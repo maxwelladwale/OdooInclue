@@ -11,16 +11,16 @@ services:
       - ./config:/etc/odoo
     environment:
       - HOST=db
-      - USER=odoo
-      - PASSWORD=odoo
+      - USER=odooInclue
+      - PASSWORD=odooInclue
     restart: always
 
   db:
     image: postgres:14
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=odoo
-      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=$odooInclue
+      - POSTGRES_USER=$odooInclue
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
     restart: always
