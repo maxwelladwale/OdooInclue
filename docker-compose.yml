@@ -12,14 +12,14 @@ services:
     environment:
       - HOST=db
       - USER=odooInclue
-      - PASSWORD=$odooInclue
+      - PASSWORD=odooInclue!2
     restart: always
 
   db:
     image: postgres:14
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=$odooInclue
+      - POSTGRES_PASSWORD=odooInclue!2
       - POSTGRES_USER=odooInclue
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
